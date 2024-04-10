@@ -34,7 +34,7 @@ async function run() {
 
     await core.notice('\u001b[35mRunning MATLAB build');
     //core.info('\u001b[35mRunning MATLAB build');
-    core.info('\u001b[35m',await buildRunner.runCommand(helperScript, platform, architecture, exec.exec, startupOptions));  //{
+    core.info('\u001b[35m' await buildRunner.runCommand(helperScript, platform, architecture, exec.exec, startupOptions));  //{
 
    // });
 
