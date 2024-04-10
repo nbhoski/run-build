@@ -12,7 +12,9 @@ classdef BuildTaskGroupPlugin < matlab.buildtool.plugins.BuildRunnerPlugin
            disp("::group::" + pluginData.TaskResults.Name );
         end
             runTask@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
-            disp("::endgroup::");
+            if pluginData.TaskResults.Name ~= "error"
+               disp("::endgroup::");
+            end
         end
     end
  end
