@@ -5,6 +5,7 @@ import * as os from "os";
 import * as path from "path";
 import { v4 as uuid } from "uuid";
 import * as script from "./script";
+import * as core from "@actions/core";
 
 /**
  * Helper interface to represent a MATLAB script.
