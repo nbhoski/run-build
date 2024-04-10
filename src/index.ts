@@ -3,8 +3,9 @@
 import * as core from "@actions/core";
 import * as exec from "@actions/exec";
 import * as io from "@actions/io";
-import { matlab } from "run-matlab-command-action";
+//import { matlab } from "run-matlab-command-action";
 import * as buildtool from "./buildtool";
+import * as buildRunner from "./runMatlabBuild"
 
 /**
  * Gather action inputs and then run action.
@@ -31,8 +32,8 @@ async function run() {
         return helperScript;
     });
 
-    await core.group("Run command", async () => {
-        await matlab.runCommand(helperScript, platform, architecture, exec.exec, startupOptions);
+    await core.group("Run build", async () => {
+        await buildRunner.runCommand(helperScript, platform, architecture, exec.exec, startupOptions);
     });
 
     // Cleanup post run for self hosted runners
