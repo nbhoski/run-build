@@ -27,7 +27,7 @@ async function run() {
     const startupOptions = core.getInput("startup-options").split(" ");
 
     const helperScript = await core.group("Generate script", async () => {
-        const helperScript = await matlab.generateScript(workspaceDir, command);
+        const helperScript = await buildRunner.generateScript(workspaceDir, command);
         core.info("Successfully generated script");
         return helperScript;
     });
