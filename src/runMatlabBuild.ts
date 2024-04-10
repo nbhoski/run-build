@@ -65,6 +65,7 @@ export async function runCommand(hs: HelperScript, platform: string, architectur
     if (args) {
        execArgs = execArgs.concat(args);
     }
+    const exitCode;
     await core.group("Runnig tasks", async () => {
      const exitCode = await fn(rmcPath, execArgs);
      })
