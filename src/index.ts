@@ -32,7 +32,7 @@ async function run() {
         return helperScript;
     });
 
-    await core.group("Running MATLAB build", async () => {
+    await core.notice("Running MATLAB build", async () => {
         await buildRunner.runCommand(helperScript, platform, architecture, exec.exec, startupOptions);
     });
 
