@@ -33,7 +33,9 @@ async function run() {
     });
 
     await core.group("Run build", async () => {
+        await core.group("Running Tasks",async () => {
         await buildRunner.runCommand(helperScript, platform, architecture, exec.exec, startupOptions);
+        })
     });
 
     // Cleanup post run for self hosted runners
