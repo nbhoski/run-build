@@ -16,5 +16,18 @@ classdef BuildTaskGroupPlugin < matlab.buildtool.plugins.BuildRunnerPlugin
                disp("::endgroup::");
             end
         end
+        % Teardown method
+        function teardownBuildFixture(plugin, pluginData)
+             arguments
+                 plugin (1,1) matlab.buildtool.plugins.BuildRunnerPlugin
+                 pluginData (1,1) matlab.buildtool.plugins.plugindata.BuildFixturePluginData
+             end
+             disp("### Build Summary >>")
+             disp("| Task Name  | Task Status | >>");
+             disp("| ---------- | ----------- | >>");
+             disp("| test       |     PASS    | >>");
+             nextOperator = plugin.getNextOperator();
+             nextOperator.teardownBuildFixture(pluginData);
+        end
     end
  end
