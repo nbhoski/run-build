@@ -46,9 +46,10 @@ async function run() {
      .addTable([
        [{data: 'File', header: true}, {data: 'Result', header: true}],
        ['test', 'Pass ✅'],
-       ['check.js', 'Pass ✅']
+       ['show', 'Fail ❌'],
+       ['check', 'Pass ✅']
      ])
-     .addLink('View staging deployment!', 'https://github.com')
+     .addLink('View detailed build result', 'https://github.com')
      .write()
 
     // Cleanup post run for self hosted runners
