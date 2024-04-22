@@ -39,6 +39,18 @@ async function run() {
 
    // });
 
+   //Addding summary Page
+   core.summary
+     .addHeading('Build Results')
+     //.addCodeBlock(generateTestResults(), "js")
+     .addTable([
+       [{data: 'File', header: true}, {data: 'Result', header: true}],
+       ['test', 'Pass ✅'],
+       ['check.js', 'Pass ✅']
+     ])
+     .addLink('View staging deployment!', 'https://github.com')
+     .write()
+
     // Cleanup post run for self hosted runners
     await io.rmRF(workspaceDir + '/.matlab');
 
