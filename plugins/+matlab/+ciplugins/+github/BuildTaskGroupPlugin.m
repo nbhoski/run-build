@@ -19,10 +19,11 @@ classdef BuildTaskGroupPlugin < matlab.buildtool.plugins.BuildRunnerPlugin
         % Teardown method
         function teardownBuildFixture(plugin, pluginData)
              teardownBuildFixture@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
-             disp("### Build Summary >> $GITHUB_STEP_SUMMARY");
-             disp("""| Task Name  | Task Status |""" + ">> $GITHUB_STEP_SUMMARY");
-             disp("""| ---------- | ----------- |""" + ">> $GITHUB_STEP_SUMMARY");
-             disp("""| test       |     PASS    |""" + ">> $GITHUB_STEP_SUMMARY");
+             disp("\u001b[35####### MATLAB build Summary #######");
+             disp("\u001b[35Tasks run: "+ 3);
+             disp("\u001b[35Tasks failed: "+ 0);
+             disp("\u001b[35Tasks skipped: "+ 0);
+
         end
     end
  end
