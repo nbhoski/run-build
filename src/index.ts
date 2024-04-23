@@ -39,6 +39,12 @@ async function run() {
 
    // });
 
+   // Adding Summary details in log
+   core.info("\u001b[35m####### MATLAB build Summary #######");
+   core.info("\u001b[38mTasks run: "+ 3);
+   core.info("\u001b[38;2;255;0;0mTasks failed: "+ 0);
+   core.info("\u001b[43mTasks skipped: "+ 0);
+
    //Addding summary Page
    core.summary
      .addHeading('Build Results')
