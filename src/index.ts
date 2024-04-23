@@ -47,7 +47,7 @@ async function run() {
 
    //Addding summary Page
    core.summary
-     .addHeading('Build Results')
+     .addHeading('MATLAB build results')
      //.addCodeBlock(generateTestResults(), "js")
      .addTable([
        [{data: 'Task Name', header: true}, {data: 'Status', header: true}, {data: 'Description', header: true}, {data: 'Duration (HH:MM:SS)', header: true}],
