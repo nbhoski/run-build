@@ -50,10 +50,10 @@ async function run() {
      .addHeading('Build Results')
      //.addCodeBlock(generateTestResults(), "js")
      .addTable([
-       [{data: 'File', header: true}, {data: 'Result', header: true}],
-       ['test', 'Pass ✅'],
-       ['show', 'Fail ❌'],
-       ['check', 'Pass ✅']
+       [{data: 'Task Name', header: true}, {data: 'Status', header: true}, {data: 'Description', header: true}, {data: 'Duration (HH:MM:SS)', header: true}],
+       ['build', 'Pass ✅', 'Builds the code', '00:00:01'],
+       ['test', 'Fail ❌', 'Run tests', '00:00:05'],
+       ['verify', 'Skipped 🚫', 'Runs static analysis', '00:00:00']
      ])
      .addLink('View detailed build result', 'https://github.com')
      .write()
