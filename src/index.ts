@@ -40,10 +40,10 @@ async function run() {
    // });
 
    // Adding Summary details in log
-   core.info("\u001b[35m####### MATLAB build summary #######");
-   core.info("\u001b[32mTasks run: "+ 3);
-   core.info("\u001b[38;2;255;0;0mTasks failed: "+ 0);
-   core.info("\u001b[33mTasks skipped: "+ 0);
+   //core.info("\u001b[35m####### MATLAB build summary #######");
+   //core.info("\u001b[32mTasks run: "+ 3);
+   //core.info("\u001b[38;2;255;0;0mTasks failed: "+ 0);
+   //core.info("\u001b[33mTasks skipped: "+ 0);
 
    //Addding summary Page
    core.summary
@@ -53,7 +53,7 @@ async function run() {
        [{data: 'Task Name', header: true}, {data: 'Status', header: true}, {data: 'Description', header: true}, {data: 'Duration (HH:MM:SS)', header: true}],
        ['build', 'Pass ✅', 'Builds the code', '00:00:01'],
        ['test', 'Fail ❌', 'Run tests', '00:00:05'],
-       ['deploy', 'Skipped 🚫', 'deploys code', '00:00:00']
+       ['deploy', 'Skipped ⛔', 'deploys code', '00:00:00']
      ])
      .addLink('View detailed build result', 'https://github.com')
      .write()
