@@ -26,11 +26,11 @@ async function run() {
     const command = buildtool.generateCommand(options);
     const startupOptions = core.getInput("startup-options").split(" ");
 
-    const helperScript = await core.info(async () => {
+    //const helperScript = await core.info(async () => {
         const helperScript = await buildRunner.generateScript(workspaceDir, command);
         core.info("Successfully generated script");
-        return helperScript;
-    });
+    //    return helperScript;
+    //});
 
 
     //await core.notice('\u001b[35mRunning MATLAB build');
