@@ -102,4 +102,11 @@ jobs:
         uses: ./
         with:
           tasks: test("myTests", OutputDetail="concise")
+
+      - name: Run build with continue on failure
+        continue-on-error: true
+        uses: ./
+        with:
+          tasks: error deploy
+          build-options: -continueOnFailure
   
