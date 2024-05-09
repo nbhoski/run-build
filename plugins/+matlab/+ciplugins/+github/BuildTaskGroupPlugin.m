@@ -6,14 +6,14 @@ classdef BuildTaskGroupPlugin < matlab.buildtool.plugins.BuildRunnerPlugin
     methods (Access=protected)
 
         function runTask(plugin, pluginData)
-        if pluginData.TaskResults.Name == "error"
+        if pluginData.TaskResults.Name == "errort"
            disp("::error::" + "Run MATLAB Build-" + pluginData.TaskResults.Name);
         else
            disp("::group::" + "Run MATLAB Build-" + pluginData.TaskResults.Name);
         end
             runTask@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
-            if pluginData.TaskResults.Name ~= "error"
-               disp("::endgroup::");
+            if pluginData.TaskResults.Failed
+               disp("::error::" + "Run MATLAB Build-" + pluginData.TaskResults.Name);
             end
         end
         % Teardown method
